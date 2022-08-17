@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      color:rgb(45, 135, 215);
+      margin:0;
+      box-sizing: border-box;
+    }
+    body{
+      width: 100vw;
+      height: 100vh;
+      background: url(./clouds.jpg) no-repeat;
+      background-position: center;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #pop-up{
+      width:400px;
+      height:600px;
+      background: rgba(255, 255, 255, 0.5);
+      backdrop-filter: blur(20px);
+      border-radius: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding: 30px;
+      border: 2px solid rgb(45, 135, 215);
+    }
+    #pop-up>p{
+      margin:30px auto 100px;
+      text-align: center;
+    }
+
+    #trigger{
+      padding:10px 50px;
+      background-color: rgb(45, 135, 215);
+      color:#fff;
+      font-size: 24px;
+      border: none;
+      border-radius: 5px;
+    }
+    #trigger:hover{
+      background-color: rgb(15, 70, 120);
+      transition: 0.25s;
+    }
+
+    .circle{
+      width: 200px;
+      height: 200px;
+      background-color: rgb(15, 70, 120);
+      border-radius: 50%;
+      position: absolute;
+      right: 35%;
+      top: 30%;
+
+    }
+  </style>
+</head>
+<body>
+  <div class="circle"></div>
+  <div id="pop-up">
+    <h1>HELLO</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium dolores magnam reiciendis ducimus! Quos in qui veritatis a unde impedit non. Maxime atque, facere est voluptate placeat in temporibus ad.</p>
+    <button id="trigger">close</button>
+  </div>
+  <script>
+    let popUp = document.getElementById('pop-up');
+    let trigger = document.getElementById('trigger');
+    trigger.addEventListener('click', function(){
+      popUp.style.display = 'none';
+    })
+    console.dir(document.getElementById('pop-up'));
+    console.dir(document.getElementById('trigger'));    
+
+  </script>
+</body>
+</html>
